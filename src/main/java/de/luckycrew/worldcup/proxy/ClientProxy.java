@@ -1,11 +1,13 @@
 package de.luckycrew.worldcup.proxy;
 
+import de.luckycrew.worldcup.render.WorldCupModelRegistry;
 import net.minecraftforge.fml.common.event.*;
 
 public class ClientProxy extends CommonProxy {
 	
 	public void preinit(FMLPreInitializationEvent event) {
 		super.preinit(event);
+		new WorldCupModelRegistry();
 	}
 	
 	public void init(FMLInitializationEvent event) {

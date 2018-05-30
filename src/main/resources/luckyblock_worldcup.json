@@ -1,0 +1,12 @@
+[
+	{
+		"modid": "luckyblock_worldcup",
+		"description": "placeholder",
+		"url": "https://luckycrew.de/worldcup",
+		"authorList": [
+			"HyCraftHD"
+		],
+		"credits": "LuckyCrew and U Team",
+		"logoFile": "assets/luckyblock_worldcup/textures/blocks/luckyblock_worldcup.png"
+	}
+]
