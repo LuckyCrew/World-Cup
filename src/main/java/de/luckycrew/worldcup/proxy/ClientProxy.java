@@ -1,6 +1,6 @@
 package de.luckycrew.worldcup.proxy;
 
-import de.luckycrew.worldcup.render.WorldCupModelRegistry;
+import de.luckycrew.worldcup.render.*;
 import net.minecraftforge.fml.common.event.*;
 
 public class ClientProxy extends CommonProxy {
@@ -12,6 +12,7 @@ public class ClientProxy extends CommonProxy {
 	
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
+		new WorldCupRenderRegistry();
 	}
 	
 	public void postinit(FMLPostInitializationEvent event) {

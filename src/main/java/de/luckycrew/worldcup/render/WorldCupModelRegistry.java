@@ -9,6 +9,7 @@ public class WorldCupModelRegistry {
 	public WorldCupModelRegistry() {
 		item();
 		block();
+		entity();
 	}
 	
 	private void block() {
@@ -17,5 +18,8 @@ public class WorldCupModelRegistry {
 	
 	private void item() {
 		
+	}
+	
+	private void entity() {
 	}
 }

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.*;
 public class WorldCupConstants {
 	
 	public static final String MODID = "luckyblock_worldcup";
-	public static final String NAME = "Halloween LuckyBlocks";
+	public static final String NAME = "World Cup LuckyBlocks";
 	public static final String VERSION = "@VERSION@";
 	public static final String MCVERSION = "1.8";
 	public static final String DEPENDENCIES = "required-after:uteamcore@1.1.2-49";
