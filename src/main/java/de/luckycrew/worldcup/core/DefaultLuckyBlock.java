@@ -1,4 +1,4 @@
-package de.luckycrew.core;
+package de.luckycrew.worldcup.core;
 
 import info.u_team.u_team_core.block.UBlock;
 import info.u_team.u_team_core.creativetab.UCreativeTab;

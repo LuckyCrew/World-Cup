@@ -2,8 +2,8 @@ package de.luckycrew.worldcup.handler;
 
 import static info.u_team.u_team_core.util.registry.CommonRegistry.registerEventHandler;
 
-import de.luckycrew.core.*;
 import de.luckycrew.worldcup.block.WorldCupBlocks;
+import de.luckycrew.worldcup.core.*;
 
 public class WorldCupCommonHandler {
 	

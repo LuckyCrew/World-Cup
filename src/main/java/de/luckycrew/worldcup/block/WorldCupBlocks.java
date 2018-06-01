@@ -2,7 +2,7 @@ package de.luckycrew.worldcup.block;
 
 import static de.luckycrew.worldcup.tab.WorldCupTabs.tab;
 
-import de.luckycrew.core.DefaultLuckyBlock;
+import de.luckycrew.worldcup.core.DefaultLuckyBlock;
 
 public class WorldCupBlocks {
 	

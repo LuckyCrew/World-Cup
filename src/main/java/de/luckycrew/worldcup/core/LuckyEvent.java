@@ -1,4 +1,4 @@
-package de.luckycrew.core;
+package de.luckycrew.worldcup.core;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.BlockPos;

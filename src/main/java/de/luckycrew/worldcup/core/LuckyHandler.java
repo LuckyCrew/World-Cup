@@ -1,4 +1,4 @@
-package de.luckycrew.core;
+package de.luckycrew.worldcup.core;
 
 import java.util.ArrayList;
 
