@@ -25,7 +25,7 @@ public class ItemFootball extends UItem {
 			--itemstack.stackSize;
 		}
 		
-		world.playSoundAtEntity(player, "random.fizz", 0.6F, 0.4F / (itemRand.nextFloat() * 3F + 5F));
+		world.playSoundAtEntity(player, "note.harp", 0.2F, 0.4F / (itemRand.nextFloat() * 3F + 5F));
 		
 		if (!world.isRemote) {
 			world.spawnEntityInWorld(new EntityFootball(world, player));

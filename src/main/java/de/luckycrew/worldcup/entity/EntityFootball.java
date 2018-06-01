@@ -1,6 +1,5 @@
 package de.luckycrew.worldcup.entity;
 
-import info.u_team.u_team_core.util.MathUtil;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.*;
@@ -32,7 +31,7 @@ public class EntityFootball extends EntityThrowable {
 	
 	@Override
 	public float getVelocity() {
-		return 2.0F;
+		return 1.5F;
 	}
 	
 	@Override
@@ -41,23 +40,21 @@ public class EntityFootball extends EntityThrowable {
 	}
 	
 	@Override
-	public void onImpact(MovingObjectPosition result) {
+	public void onImpact(MovingObjectPosition mov) {
 		if (!this.worldObj.isRemote) {
-			if (result.entityHit != null && result.entityHit instanceof EntityLivingBase) {
-				EntityLivingBase entity = (EntityLivingBase) result.entityHit;
-				result.entityHit.attackEntityFrom(DamageSource.generic, entity.getHealth() / 2);
+			if (mov.entityHit != null && mov.entityHit instanceof EntityLivingBase) {
+				EntityLivingBase entity = (EntityLivingBase) mov.entityHit;
+				mov.entityHit.attackEntityFrom(DamageSource.generic, entity.getHealth() / 2);
+				setDead();
 			} else {
-				BlockPos pos = result.getBlockPos();
-				if (pos == null) {
-					return;
-				}
-				this.worldObj.setBlockToAir(pos);
+				motionY *= -0.5;
+				motionX *= 0.8;
+				motionZ *= 0.8;
 				
-				if (MathUtil.getRandomNumberInRange(0, 1) == 0) {
-					// this.worldObj.spawnEntityInWorld(new EntityItem(worldObj, pos.getX(), pos.getY(), pos.getZ(), ItemStackUtil.from(LbemMod.instance.items.ball)));
+				if (Math.abs(motionX) < 0.1 && Math.abs(motionY) < 0.1 && Math.abs(motionZ) < 0.1) {
+					setDead();
 				}
 			}
-			this.setDead();
 		}
 	}
 }

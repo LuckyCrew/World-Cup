@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderFootball extends Render {
 	
-	private static final ResourceLocation texure = new ResourceLocation(WorldCupConstants.MODID, "textures/models/football.png");
+	private static final ResourceLocation texure = new ResourceLocation(WorldCupConstants.MODID, "textures/entity/football.png");
 	
 	private Sphere sphere;
 	
