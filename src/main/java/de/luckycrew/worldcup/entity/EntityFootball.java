@@ -3,6 +3,7 @@ package de.luckycrew.worldcup.entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.*;
+import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
 
 public class EntityFootball extends EntityThrowable {
@@ -42,7 +43,7 @@ public class EntityFootball extends EntityThrowable {
 	@Override
 	public void onImpact(MovingObjectPosition mov) {
 		if (!this.worldObj.isRemote) {
-			if (mov.entityHit != null && mov.entityHit instanceof EntityLivingBase) {
+			if (mov.typeOfHit.equals(MovingObjectType.ENTITY) && mov.entityHit instanceof EntityLivingBase) {
 				EntityLivingBase entity = (EntityLivingBase) mov.entityHit;
 				mov.entityHit.attackEntityFrom(DamageSource.generic, entity.getHealth() / 2);
 				setDead();
@@ -53,6 +54,8 @@ public class EntityFootball extends EntityThrowable {
 				
 				if (Math.abs(motionX) < 0.1 && Math.abs(motionY) < 0.1 && Math.abs(motionZ) < 0.1) {
 					setDead();
+				} else {
+					worldObj.setBlockToAir(mov.getBlockPos());
 				}
 			}
 		}
